@@ -9,19 +9,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pe.edu.cibertec.APIRESTEC2GRUPO1.model.bd.Autor;
 import pe.edu.cibertec.APIRESTEC2GRUPO1.model.dto.AutorRequestDto;
+import pe.edu.cibertec.APIRESTEC2GRUPO1.service.IAutorService;
 
 @AllArgsConstructor
 @RestController
 @RequestMapping(path = "api/v1/autor")
 public class AutorController {
-    private IClienteService iClienteService;
+    private IAutorService iautorService;
 
     @PostMapping("")
-    public ResponseEntity<Autor> registrarCliente(
+    public ResponseEntity<Autor> registrarAutor(
             @RequestBody AutorRequestDto autorRequestDto
     ){
         return new ResponseEntity<>(
-                iClienteService.registrarCliente(autorRequestDto),
+                iautorService.registrarAutor(autorRequestDto),
                 HttpStatus.CREATED
         );
     }

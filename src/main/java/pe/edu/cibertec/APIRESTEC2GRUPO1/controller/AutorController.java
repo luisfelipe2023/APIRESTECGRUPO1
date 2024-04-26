@@ -13,7 +13,7 @@ import pe.edu.cibertec.APIRESTEC2GRUPO1.service.IAutorService;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "api/v1/autor")
+@RequestMapping(path = "api/v1/autor")  //Ruta para el POSTMAN
 public class AutorController {
     private IAutorService iautorService;
 

@@ -11,7 +11,7 @@ public class PublicacionService implements IPublicacionService {
     private PublicacionRepository publicacionRepository;
 
     @Override
-    public Publicacion registrarPublicacion(Publicacion publicacion) {
+    public Publicacion registrarPublicacion(Publicacion publicacion) { //Función que registra, ya está relacionado junto a su Repository
         return publicacionRepository.save(publicacion);
     }
 }

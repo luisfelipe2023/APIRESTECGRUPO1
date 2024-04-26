@@ -9,7 +9,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "Publicacion")
+@Table(name = "Publicacion") //De la tabla Publicacion
 public class Publicacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -17,14 +17,14 @@ public class AutorService implements IAutorService {
 
     @Transactional
     @Override
-    public Autor registrarAutor(AutorRequestDto autorRequestDto) {
+    public Autor registrarAutor(AutorRequestDto autorRequestDto) { //Función corregida, ahora sí registra y guarda correctamente en la BD
         Autor autor = new Autor();
         autor.setNomAutor(autorRequestDto.getNomAutor());
         autor.setApeAutor(autorRequestDto.getApeAutor());
         autor.setFechNacAutor(autorRequestDto.getFechNacAutor());
         Autor nuevoAutor = autorRepository.save(autor);
         Publicacion publicacion;
-        for (PublicacionRequestDto publicacionRequestDto : autorRequestDto.getPublicacion()) {
+        for (PublicacionRequestDto publicacionRequestDto : autorRequestDto.getPublicacion()) { //Este bucle permite obtener los datos a través del Objeto Publicación
             publicacion = new Publicacion();
             publicacion.setTitulo(publicacionRequestDto.getTitulo());
             publicacion.setFechPublicacion(publicacionRequestDto.getFechPublicacion());
